@@ -1,0 +1,321 @@
+/* Base Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77, #778da9);
+    background-size: cover;
+    color: #e0e1dd;
+    margin: 0;
+    padding: 0;
+}
+
+/* Intro Section */
+#intro {
+    text-align: center;
+    padding: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    margin: 40px 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 3.8em;
+    color: #ffdd57;
+    margin: 0;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Section Headings */
+h2 {
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #ffdd57;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Paragraph Text */
+p {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: #c9d6df;
+}
+
+/* Main Section Styling */
+#info-section, #nhwo-section, #visualization-section, #compare-section {
+    padding: 30px;
+    margin: 20px;
+    background: rgba(34, 34, 34, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+}
+
+/* Info Container */
+.info-container {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+}
+
+a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color: #f7b42c;
+    text-shadow: 2px 2px 5px #f7b42c;
+}
+
+/* Comparison Container */
+.comparison-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #415a77, #778da9);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1b263b, #415a77);
+    transform: translateY(-2px);
+}
+
+/* Solar System Canvas */
+#solar-system-canvas {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Size Comparison Canvas */
+#size-canvas {
+    border: 2px solid #ffdd57;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+#comparison-result {
+    font-size: 1.3em;
+    margin-top: 20px;
+    color: #c9d6df;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* General Text Styling */
+h3 {
+    color: #ffdd57;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+/* Styling for the three-column planet list */
+.planet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space between the columns */
+    gap: 20px;
+    margin-top: 20px; /* Add space between the text and the columns */
+}
+
+.planet-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 30%;  /* Make sure each column takes up about 30% of the width */
+}
+
+.planet-list ul li {
+    margin: 8px 0; /* Adds spacing between each planet in the list */
+}
+
+.planet-list a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.planet-list a:hover {
+    color: #f7b42c;
+    text-shadow: 2px 2px 5px #f7b42c;
+}
+/* Стили для других секций */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://images.unsplash.com/photo-1511672735734-4a3455448ff5') no-repeat center center fixed;
+    background-size: cover;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#intro {
+    text-align: center;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+    font-size: 2.5em;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+#info-section, #nhwo-section, #visualization-section, #compare-section {
+    padding: 20px;
+    margin: 20px;
+    background: rgba(34, 34, 34, 0.8);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.planet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Три колонки */
+}
+
+.planet-list ul {
+    list-style-type: none;
+    padding: 0;
+    width: 30%; /* Ширина каждой колонки */
+}
+
+li {
+    margin: 5px 0;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ffcc00;
+}
+
+.comparison-container {
+    text-align: center;
+}
+
+/* Добавляем стили для Compare Size */
+#compare-section {
+    padding: 20px;
+    margin: 20px;
+    background: rgba(34, 34, 34, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.3em;
+    background-color: #f7b42c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    background-color: #ffdd57;
+    box-shadow: 0 6px 15px rgba(255, 221, 87, 0.6);
+}
+
+#comparison-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #f0f0f0;
+}
+#comparison-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+#comparison-result table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: rgba(34, 34, 34, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#comparison-result th, #comparison-result td {
+    padding: 12px;
+    border: 1px solid #555;
+    text-align: center;
+}
+
+#comparison-result th {
+    background-color: #1e90ff;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+#comparison-result td {
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+#comparison-result tr:nth-child(even) {
+    background-color: rgba(70, 70, 70, 0.8);
+}
+/* Add this in your CSS file or in a <style> tag */
+#nhwo-section img {
+    width: 50%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}

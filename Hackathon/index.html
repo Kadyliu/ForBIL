@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Explorer: Solar System & Exoplanets</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="intro">
+        <h1>Cosmic Explorer</h1>
+        <p>Embark on a journey through the solar system and beyond. Explore planets, stars, and distant worlds.</p>
+    </div>
+
+    <!-- Information Section -->
+    <section id="info-section">
+        <h2>Discover Exoplanets</h2>
+        <div class="info-container">
+            <h3>Known Exoplanets</h3>
+            <p>Here are some fascinating exoplanets. Click to learn more:</p>
+            <!-- Planet list in three columns -->
+            <div class="planet-list">
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/TOI-700_d" target="_blank">TOI-700 d</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Teegarden_b" target="_blank">Teegarden b</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Kepler-1649c" target="_blank">Kepler-1649c</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/TRAPPIST-1_d" target="_blank">TRAPPIST-1 d</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Proxima_Centauri_b" target="_blank">Proxima Centauri b</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/K2-72_e" target="_blank">K2-72 e</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/GJ_1061_d" target="_blank">GJ 1061 d</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Wolf_1061c" target="_blank">Wolf 1061 c</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Ross_128_b" target="_blank">Ross 128 b</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Luyten_b" target="_blank">Luyten b</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/TRAPPIST-1_e" target="_blank">TRAPPIST-1 e</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Kepler-442_b" target="_blank">Kepler-442 b</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Gliese_667_Cc" target="_blank">Gliese 667 Cc</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Gliese_667" target="_blank">Gliese 667</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Kepler-1229_b" target="_blank">Kepler-1229 b</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Tau_Ceti_f" target="_blank">Tau Ceti f</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/TRAPPIST-1_f" target="_blank">TRAPPIST-1 f</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Kepler-62_f" target="_blank">Kepler-62 f</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Kepler-186_f" target="_blank">Kepler-186 f</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Gliese_667_C_e" target="_blank">Gliese 667 C e</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/TRAPPIST-1_g" target="_blank">TRAPPIST-1 g</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NHWO Section -->
+    <section id="nhwo-section">
+        <h2>Navigator for Habitable Worlds Observatory (NHWO)</h2>
+        <p>
+            The Navigator for Habitable Worlds Observatory (NHWO) is an initiative designed to explore exoplanets and search for potentially habitable worlds beyond our solar system. NHWO will utilize powerful telescopes and advanced technologies to identify planets located in the habitable zone of their stars.
+        </p>
+        <p>
+            Key goals of NHWO include:
+        </p>
+        <ul>
+            <li>Searching for and studying exoplanets in their stars' habitable zones.</li>
+            <li>Investigating the atmospheres of exoplanets for signs of life.</li>
+            <li>Assessing conditions for life on exoplanets, including the presence of water and other essential elements.</li>
+        </ul>
+        <p>
+            NHWO represents an important step in the exploration of space and our understanding of the possibility of life beyond Earth.
+        </p>
+        <img src="https://avatars.mds.yandex.net/get-entity_search/5631834/921297227/S600xU" alt="Navigator For Habitable World Observatory"> 
+    </section>
+
+    <!-- 3D Visualization Section -->
+    <section id="visualization-section">
+        <h2>3D Visualization of Planets and Orbits</h2>
+        <div id="solar-system-canvas"></div>
+    </section>
+
+    <!-- Compare Sizes Section -->
+    
+
+    <script>
+        // Function to visualize planets and orbits using Three.js
+        function initSolarSystemVisualization() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('solar-system-canvas').appendChild(renderer.domElement);
+
+            // Create light source
+            const light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(5, 5, 5).normalize();
+            scene.add(light);
+
+            // Load planet textures
+            const textureLoader = new THREE.TextureLoader();
+            const earthTexture = textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/9/9b/Earth_wallpaper_1920x1080.jpg');
+            const jupiterTexture = textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg');
+            const marsTexture = textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/0/02/Mars.jpg');
+            const saturnTexture = textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/3/3d/Saturn.jpg');
+            const venusTexture = textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/e/e7/Venus.png');
+
+            // Create Earth
+            const earthGeometry = new THREE.SphereGeometry(1, 32, 32);
+            const earthMaterial = new THREE.MeshPhongMaterial({ map: earthTexture });
+            const earth = new THREE.Mesh(earthGeometry, earthMaterial);
+            earth.position.x = -4;
+            scene.add(earth);
+
+            // Create Jupiter
+            const jupiterGeometry = new THREE.SphereGeometry(1.5, 32, 32);
+            const jupiterMaterial = new THREE.MeshPhongMaterial({ map: jupiterTexture });
+            const jupiter = new THREE.Mesh(jupiterGeometry, jupiterMaterial);
+            jupiter.position.x = 6;
+            scene.add(jupiter);
+
+            // Create Mars
+            const marsGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+            const marsMaterial = new THREE.MeshPhongMaterial({ map: marsTexture });
+            const mars = new THREE.Mesh(marsGeometry, marsMaterial);
+            mars.position.x = -3;
+            scene.add(mars);
+
+            // Create Saturn
+            const saturnGeometry = new THREE.SphereGeometry(1.3, 32, 32);
+            const saturnMaterial = new THREE.MeshPhongMaterial({ map: saturnTexture });
+            const saturn = new THREE.Mesh(saturnGeometry, saturnMaterial);
+            saturn.position.x = 8;
+            scene.add(saturn);
+
+            // Create Venus
+            const venusGeometry = new THREE.SphereGeometry(0.9, 32, 32);
+            const venusMaterial = new THREE.MeshPhongMaterial({ map: venusTexture });
+            const venus = new THREE.Mesh(venusGeometry, venusMaterial);
+            venus.position.x = -2;
+            scene.add(venus);
+
+            // Camera position
+            camera.position.z = 10;
+
+            // Animation
+            function animate() {
+                requestAnimationFrame(animate);
+                earth.rotation.y += 0.01;
+                jupiter.rotation.y += 0.01;
+                mars.rotation.y += 0.01;
+                saturn.rotation.y += 0.01;
+                venus.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        initSolarSystemVisualization();
+
+        function comparePlanets() {
+            const resultDiv = document.getElementById('comparison-result');
+            resultDiv.innerHTML = "<p>Comparison of planet sizes is under development.</p>";
+        }
+    </script>
+</body>
+</html>
+<section id="compare-section">
+    <h2>Compare Planet Sizes</h2>
+    <div class="comparison-container">
+        <button onclick="comparePlanets()">Compare Sizes</button>
+        <div id="comparison-result"></div>
+    </div>
+</section>
+
+<script>
+    function comparePlanets() {
+        const planets = [
+            { name: "TOI-700 d", diameter: 14400 }, // в километрах
+            { name: "Teegarden b", diameter: 12000 },
+            { name: "Kepler-1649c", diameter: 13200 },
+            { name: "TRAPPIST-1 d", diameter: 11300 },
+            { name: "Proxima Centauri b", diameter: 12500 },
+            { name: "K2-72 e", diameter: 10600 },
+            { name: "GJ 1061 d", diameter: 10300 },
+            { name: "Wolf 1061 c", diameter: 13250 },
+            { name: "Ross 128 b", diameter: 12300 },
+            { name: "Luyten b", diameter: 11900 },
+            { name: "TRAPPIST-1 e", diameter: 12070 },
+            { name: "Kepler-442 b", diameter: 13300 },
+            { name: "Gliese 667 Cc", diameter: 12900 },
+            { name: "Kepler-1229 b", diameter: 14000 },
+            { name: "Tau Ceti f", diameter: 11000 },
+            { name: "TRAPPIST-1 f", diameter: 11200 },
+            { name: "Kepler-62 f", diameter: 13400 },
+            { name: "Kepler-186 f", diameter: 12800 },
+            { name: "Gliese 667 C e", diameter: 11700 },
+            { name: "TRAPPIST-1 g", diameter: 13800 }
+        ];
+
+        let resultHTML = "<table><tr><th>Planet</th><th>Diameter (km)</th></tr>";
+        planets.forEach(planet => {
+            resultHTML += `<tr><td>${planet.name}</td><td>${planet.diameter} km</td></tr>`;
+        });
+        resultHTML += "</table>";
+
+        document.getElementById('comparison-result').innerHTML = resultHTML;
+    }
+</script>
+<a href="URL" target="_blank">Link Text</a>
