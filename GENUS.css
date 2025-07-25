@@ -1,0 +1,138 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2a 50%, #000033 100%); /* Черный, фиолетовый, темно-синий градиент */
+    color: #e0e0e0; /* Светлый текст для контраста */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Начинаем сверху */
+    min-height: 100vh; /* Минимальная высота на весь экран */
+    padding: 20px;
+    box-sizing: border-box; /* Учитываем padding в ширине/высоте */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Максимальная ширина контента */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для контейнера */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    backdrop-filter: blur(5px); /* Эффект размытия фона за контейнером */
+    -webkit-backdrop-filter: blur(5px); /* Для Safari */
+}
+
+/* Стили для заголовка и описания */
+.header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 3em;
+    font-weight: 700;
+    color: #8a2be2; /* Фиолетовый */
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.6); /* Свечение */
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #cccccc;
+    max-width: 500px; /* Ограничение ширины для читаемости */
+    margin: 0 auto;
+}
+
+/* Стили для секции ссылок */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Отступ между кнопками */
+    margin-bottom: 30px;
+}
+
+.link-button {
+    display: block; /* Каждая кнопка на новой строке */
+    padding: 18px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #ffffff; /* Белый текст на кнопках */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Для эффекта градиента на наведении */
+    position: relative;
+    z-index: 1; /* Чтобы псевдоэлемент был под текстом */
+}
+
+.link-button:hover {
+    transform: translateY(-3px); /* Легкий подъем при наведении */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для конкретных кнопок */
+.button-gradient {
+    background: linear-gradient(45deg, #4b0082, #6a5acd, #4169e1); /* Фиолетовый, индиго, королевский синий */
+}
+
+.button-gradient:hover {
+    background: linear-gradient(45deg, #6a5acd, #4169e1, #4b0082); /* Сдвиг градиента при наведении */
+}
+
+.button-telegram {
+    background-color: #0088cc; /* Цвет Telegram */
+}
+
+.button-telegram:hover {
+    background-color: #00aaff;
+}
+
+.button-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #8a2be2); /* Градиент Instagram + фиолетовый */
+}
+
+.button-instagram:hover {
+    background: linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433, #8a2be2);
+}
+
+.button-email {
+    background-color: #2b2b2b; /* Темно-серый для почты */
+    border: 1px solid #4a4a4a;
+}
+
+.button-email:hover {
+    background-color: #3b3b3b;
+    border-color: #6a6a6a;
+}
+
+
+/* Стили для футера */
+.footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #888888;
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .logo {
+        font-size: 2.5em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .link-button {
+        font-size: 1em;
+        padding: 15px 20px;
+    }
+}
